@@ -1,0 +1,66 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<nav id="sidebar">
+    <div id="sidebar_content">
+        <div id="user">
+           
+                <!-- <img src="https://i.ibb.co/PNrHLgf/isntituto-cantos.png" id="user_avatar" alt="Avatar" border="0">-->
+           
+            <p id="user_infos">
+                <span class="item-description">Moacir</span>
+                <span class="item-description">Modelo</span>
+            </p>
+        </div>
+
+        <!-- Itens do Menu -->
+       <ul id="side_items">
+    <!-- Item do Menu Cadastro -->
+    <li class="side-item">
+        <a href="#" class="menu-item" onclick="loadPage(event, 'cadastro')" title="Cadastro Completo">
+            <i class="material-icons">person_add</i>
+            <span class="item-description">Cadastro</span>
+        </a>
+    </li>
+
+    <!-- Item do Menu Relatórios -->
+    <li class="side-item">
+        <a href="#" class="menu-item" onclick="loadPage(event, 'listapdf')" title="Impressão de Listas">
+            <i class="material-icons">format_list_numbered</i>
+            <span class="item-description">Impressão de listas</span>
+        </a>
+    </li>
+
+    <!-- Item do Menu Relatórios -->
+    <li class="side-item">
+        <a href="#" class="menu-item" onclick="loadPage(event, 'relatorios')" title="Relatórios Detalhados">
+            <i class="material-icons">assessment</i>
+            <span class="item-description">Relatórios</span>
+        </a>
+    </li>
+</ul>
+
+        <!-- Botão para ocultar/mostrar o menu -->
+        <button id="open_btn">
+            <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Botão de Logout -->
+    <div id="logout">
+        <button id="logout_btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="item-description">Logout</span>
+        </button>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('open_btn').addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('open-sidebar');
+        console.log('Menu lateral alternado.');
+    });
+</script>
+
+
+
+

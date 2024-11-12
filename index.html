@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moacir</title>
+
+    <!-- Google Fonts e Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Scripts de Performance (Async e Defer) -->
+    <script src="https://apis.google.com/js/api.js" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-Y');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXX"></script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXX');
+    </script>
+
+    <!-- Inclui o CSS -->
+    <?!= include('style') ?> 
+    <!-- Inclui scripts globais -->
+    <?!= include('scripts') ?>
+</head>
+<body>
+
+    <!-- Inclui o header -->
+    <?!= include('header') ?>
+
+    <!-- Container flex para menu e conteúdo -->
+    <div class="main-container">
+
+        <!-- Barra Lateral/Menu -->
+        <?!= include('menu') ?> <!-- Inclui o menu -->
+
+        <!-- Área de Conteúdo Principal -->
+        <main id="content">
+            <h1>Moacir</h1>
+            <!-- O conteúdo dinâmico será carregado aqui -->
+        </main>
+    </div>
+
+    <!-- Status de mensagens -->
+    <div id="status" class="status-message"></div>
+
+    <!-- Inclui o rodapé -->
+    <?!= include('footer') ?>
+
+    <!-- Inclui o script global -->
+    <?!= include('scripts') ?>
+  
+</body>
+</html>
