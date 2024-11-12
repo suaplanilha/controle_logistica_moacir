@@ -31,10 +31,17 @@
 
     <!-- Inclui o CSS -->
     <?!= include('style') ?> 
-    <!-- Inclui scripts globais -->
-    <?!= include('scripts') ?>
 </head>
 <body>
+
+    <!-- Google Tag Manager (incluir imediatamente após a tag <body>) -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXX"></script>
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXX');
+    </script>
 
     <!-- Inclui o header -->
     <?!= include('header') ?>
@@ -49,6 +56,7 @@
         <main id="content">
             <h1>Moacir</h1>
             <!-- O conteúdo dinâmico será carregado aqui -->
+            <?!= include('cadastro') ?>
         </main>
     </div>
 
@@ -58,7 +66,7 @@
     <!-- Inclui o rodapé -->
     <?!= include('footer') ?>
 
-    <!-- Inclui o script global -->
+    <!-- Inclui scripts globais ao final para melhor performance -->
     <?!= include('scripts') ?>
   
 </body>

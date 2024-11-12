@@ -37,6 +37,14 @@
             <span class="item-description">Relatórios</span>
         </a>
     </li>
+
+    <!-- Novo item do menu para a Tabela -->
+    <li class="side-item">
+        <a href="#" class="menu-item" onclick="loadPage(event, 'tabela.html')" title="Ver Tabela">
+            <i class="material-icons">table_chart</i>
+            <span class="item-description">Tabela</span>
+        </a>
+    </li>
 </ul>
 
         <!-- Botão para ocultar/mostrar o menu -->
@@ -54,12 +62,15 @@
     </div>
 </nav>
 
+<!-- Remover script duplicado -->
+<!--
 <script>
     document.getElementById('open_btn').addEventListener('click', function () {
         document.getElementById('sidebar').classList.toggle('open-sidebar');
         console.log('Menu lateral alternado.');
     });
 </script>
+-->
 
 
 

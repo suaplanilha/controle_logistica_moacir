@@ -1,0 +1,51 @@
+<!-- Remover DOCTYPE e tags HTML superiores -->
+
+<!-- Seção da Tabela de Dados -->
+<section id="table-section">
+    <h2>Dados Cadastrados</h2>
+    <table id="tabelaDados" class="display">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>TU/Agendamento</th>
+                <th>Valor</th>
+                <th>BOL</th>
+                <th>DT</th>
+                <th>DT Vendas</th>
+                <th>Cancelada</th>
+                <th>MOPP</th>
+                <th>DIV</th>
+                <th>Tipo</th>
+                <th>Operação</th>
+                <th>Código</th>
+                <th>Origem</th>
+                <th>Destino</th>
+                <th>CID Destino</th>
+                <th>Cavalo</th>
+                <th>Carreta</th>
+                <th>Motorista</th>
+                <th>AT</th>
+                <th>OC</th>
+                <th>SM</th>
+                <th>Agenda</th>
+                <th>Saída</th>
+                <th>Próxima Carga</th>
+                <th>Senha</th>
+                <th>Estadias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Os dados serão carregados dinamicamente -->
+        </tbody>
+    </table>
+</section>
+
+<!-- Scripts específicos para a tabela -->
+<script>
+    $(document).ready(function() {
+        $('#tabelaDados').DataTable();
+        carregarDados();
+    });
+
+    // Função carregarDados() já deve estar definida em scripts.html ou adicionar aqui se necessário
+</script>

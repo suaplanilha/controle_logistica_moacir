@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- ...código existente... -->
+    <!-- Importar Google Fonts e estilos CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #form-section {
+            width: 90%;
+            margin: 20px auto;
+        }
+        #formCadastro {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+            gap: 20px;
+            /* Efeito de card no formulário */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* Efeito de card nos grupos de inputs */
+        #formCadastro div {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        #formCadastro label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        #formCadastro input,
+        #formCadastro select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-bottom: 15px; /* Espaço entre os campos */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            #formCadastro {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Estilos para feedback ao usuário */
+        .success-message {
+            color: green;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+        /* Estilos para os botões */
+        .button-group {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-group button {
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        /* Estilos específicos para cada botão */
+        #salvarBtn {
+            background: linear-gradient(45deg, #28a745, #85e085); /* Gradiente verde */
+        }
+        #editarBtn {
+            background-color: #ffc107; /* Âmbar claro */
+            color: #212529;
+        }
+        #excluirBtn {
+            background: linear-gradient(45deg, #dc3545, #ff6666); /* Gradiente vermelho */
+        }
+        #pesquisarBtn {
+            background-color: #007bff; /* Azul */
+        }
+        /* Efeito de loading nos botões */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        /* Centralizar os botões */
+        .button-group {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        /* Estilos para os cards */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        /* Ajustes para o formulário */
+        #formCadastro {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Alterado para 4 colunas */
+            gap: 20px;
+        }
+        /* Estilos para os botões */
+        .button-group {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        #formCadastro button {
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #salvarBtn { background-color: #28a745; }
+        #editarBtn { background-color: #17a2b8; }
+        #excluirBtn { background-color: #dc3545; }
+        #pesquisarBtn { background-color: #ffc107; color: #212529; }
+        /* Efeito de loading nos botões */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        /* Estilos personalizados para o DataTable */
+        #tabelaDados_wrapper {
+            width: 95%;
+            margin: 20px auto;
+        }
+        #tabelaDados {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        #tabelaDados th {
+            background-color: #f2f2f2; /* Cabeçalho com cor cinza claro */
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #tabelaDados td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        /* Linhas de grade */
+        #tabelaDados tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        #tabelaDados tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Formulário de Cadastro com efeito de card nos labels e inputs -->
+    <section id="form-section">
+        <h2>Cadastro</h2>
+        <div class="card">
+            <form id="formCadastro">
+                <!-- Primeira coluna -->
+                <div>
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="DATA">
+                    
+                    <label for="tu_agendamento">TU/Agendamento:</label>
+                    <input type="text" id="tu_agendamento" name="TU_AGENDAMENTO">
+
+                    <label for="valor">Valor:</label>
+                    <input type="number" id="valor" name="VALOR">
+
+                    <label for="bol">BOL:</label>
+                    <input type="text" id="bol" name="BOL">
+
+                    <label for="dt">DataDT:</label>
+                    <input type="text" id="dt" name="DT">
+
+                    <label for="dt_vendas">DataVendas:</label>
+                    <input type="text" id="dt_vendas" name="DT_VENDAS">
+
+                    <label for="cancelada">Cancelada:</label>
+                    <select id="cancelada" name="CANCELADA">
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                    </select>
+                </div>
+                <!-- Segunda coluna -->
+                <div>
+                    <label for="mopp">MOPP:</label>
+                    <input type="text" id="mopp" name="MOPP">
+
+                    <label for="div">DIV:</label>
+                    <input type="text" id="div" name="DIV">
+
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" id="tipo" name="TIPO">
+
+                    <label for="operacao">Operação:</label>
+                    <input type="text" id="operacao" name="OPERACAO">
+
+                    <label for="codigo">Código:</label>
+                    <input type="text" id="codigo" name="CODIGO">
+
+                    <label for="origem">Origem:</label>
+                    <input type="text" id="origem" name="ORIGEM">
+
+                    <label for="destino">Destino:</label>
+                    <input type="text" id="destino" name="DESTINO">
+
+                    <label for="cid_destino">CID Destino:</label>
+                    <input type="text" id="cid_destino" name="CID_DESTINO">
+                </div>
+                <!-- Terceira coluna -->
+                <div>
+                    <label for="cavalo">Cavalo:</label>
+                    <input type="text" id="cavalo" name="CAVALO">
+
+                    <label for="carreta">Carreta:</label>
+                    <input type="text" id="carreta" name="CARRETA">
+
+                    <label for="motorista">Motorista:</label>
+                    <input type="text" id="motorista" name="MOTORISTA">
+
+                    <label for="at">AT:</label>
+                    <input type="text" id="at" name="AT">
+
+                    <label for="oc">OC:</label>
+                    <input type="text" id="oc" name="OC">
+
+                    <label for="sm">SM:</label>
+                    <input type="text" id="sm" name="SM">
+
+                    <label for="agenda">Agenda:</label>
+                    <input type="text" id="agenda" name="AGENDA">
+
+                    <label for="saida">Saída:</label>
+                    <input type="text" id="saida" name="SAIDA">
+                </div>
+                <!-- Quarta coluna (nova) -->
+                <div>
+                    <label for="proxima_carga">Próxima Carga:</label>
+                    <input type="text" id="proxima_carga" name="PROXIMA_CARGA">
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="SENHA">
+
+                    <label for="estadias">Estadias:</label>
+                    <input type="text" id="estadias" name="ESTADIAS">
+                </div>
+                <!-- Botões de ação alinhados horizontalmente em grid -->
+                <div class="button-group">
+                    <button type="button" id="salvarBtn" onclick="salvarDados()">Salvar</button>
+                    <button type="button" id="editarBtn" onclick="editarDados()">Editar</button>
+                    <button type="button" id="excluirBtn" onclick="excluirDados()">Excluir</button>
+                    <button type="button" id="pesquisarBtn" onclick="pesquisarDados()">Pesquisar</button>
+                </div>
+                <!-- Mensagem de feedback -->
+                <div id="feedbackMessage" class="success-message"></div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Modificar o link para usar loadPage -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="#" class="btn" onclick="loadPage(event, 'tabela.html')">Ver Dados Cadastrados</a>
+    </div>
+
+    <!-- Incluir scripts -->
+    <!-- ...existing code... -->
+</body>
+</html>
